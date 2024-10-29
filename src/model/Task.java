@@ -1,7 +1,5 @@
 package model;
 
-import Enum.TaskStatus;
-
 
 public class Task {
     private String name;

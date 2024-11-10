@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Поехали!");
 
-        TaskManager manager = new TaskManager();
+        TaskManager manager = new InMemoryTaskManager();
 
         // Тесты на добавление и получение задач
         testAddAndGetTasks(manager);

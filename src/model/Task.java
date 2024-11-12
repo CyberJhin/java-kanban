@@ -14,6 +14,12 @@ public class Task {
         this.status = taskStatus;
     }
 
+    public Task(int id, String name, String description) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+    }
+
     public Task(String name, String description) {
         this.name = name;
         this.description = description;
@@ -62,12 +68,7 @@ public class Task {
             return false;
         }
 
-        Task otherTask = (Task) object;
-        if (this.id == ((Task) object).id) {
-            return true;
-        }
-
-        return false;
+        return this.id == ((Task) object).id;
     }
 
     @Override

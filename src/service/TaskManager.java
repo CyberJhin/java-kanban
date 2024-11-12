@@ -1,6 +1,5 @@
 package service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import model.*;
@@ -45,11 +44,11 @@ import model.*;
 
      void deleteSubtasks();
 
-     ArrayList<Epic> getEpics();
+     List<Epic> getEpics();
 
-     ArrayList<Task> getTasks();
+     List<Task> getTasks();
 
-     ArrayList<Subtask> getSubtasks();
+     List<Subtask> getSubtasks();
 
-     ArrayList<Task> getHistory();
+     List<Task> getHistory();
 }

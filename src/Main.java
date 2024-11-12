@@ -23,6 +23,9 @@ public class Main {
 
         // Тесты на очистку задач
         testClearAllTasks(manager);
+
+        // Тесты на работу с историей
+        testHistoryManager(manager);
     }
 
     public static void testAddAndGetTasks(TaskManager manager) {
@@ -193,4 +196,31 @@ public class Main {
             System.out.println("Ошибка при очистке задач.");
         }
     }
+
+    public static void testHistoryManager(TaskManager manager) {
+        System.out.println("\nТестирование работы с историей задач:");
+
+        // Добавляем больше 10 задач
+        for (int i = 1; i <= 12; i++) {
+            Task task = new Task("Task " + i, "Description " + i);
+            int taskId = manager.addTask(task);
+            manager.getTaskById(taskId);  // Имитация просмотра задачи, добавляя ее в историю
+        }
+
+        // Проверка, что история содержит только последние 10 задач
+        if (manager.getHistory().size() == 10) {
+            System.out.println("История задач работает корректно. Содержит только 10 последних задач.");
+        } else {
+            System.out.println("Ошибка в логике работы с историей задач.");
+        }
+
+
+        // Проверяем, что задача 1 была удалена из истории
+        if (manager.getHistory().size() == 10 && !manager.getHistory().contains(manager.getTaskById(1)) && !manager.getHistory().contains(manager.getTaskById(2)) ) {
+            System.out.println("История обновлена корректно: задачи 1 и 2 удалены, задача 11 и 12 добавлены.");
+        } else {
+            System.out.println("Ошибка в обновлении истории задач.");
+        }
+    }
+
 }

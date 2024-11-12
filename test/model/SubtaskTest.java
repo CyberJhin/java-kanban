@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class SubtaskTest {
 
     @Test
-    void epicTest() {
+    void testSubtaskEqualityById() {
         Subtask subtask1 = new Subtask( "Подзадача - 1",
                 "Описание подзадачи - 1, эпической задачи - 1", 1);
         Subtask subtask2 = new Subtask("Подзадача - 2",
